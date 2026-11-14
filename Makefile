@@ -2,4 +2,4 @@ all:
 	xelatex -interaction=nonstopmode main.tex
 
 clear:
-	del *.log,
+	del *.log, *.aux, *.pdf
