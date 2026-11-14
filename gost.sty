@@ -11,65 +11,27 @@
 \usepackage{fvextra}
 \usepackage{etoolbox}
 \usepackage{multicol}
+\usepackage{titlesec}
 
 \AtBeginEnvironment{Verbatim}{\fontsize{9}{11}\selectfont\ttfamily}
 \BeforeBeginEnvironment{Verbatim}{\par}
 \AfterEndEnvironment{Verbatim}{\par}
 
+\titleformat{\section}
+    {\centering\fontsize{22}{26}\selectfont\bfseries\MakeUppercase}
+    {}{0pt}{}
+\titleformat{\subsection}
+    {\fontsize{22}{26}\selectfont\bfseries}
+    {}{0pt}{}
+\titleformat{\subsubsection}
+    {\normalsize\bfseries}
+    {}{0pt}{}
 
-\newcommand{\titleOne}[1]{%
-	{\centering\fontsize{22}{26}\selectfont\bfseries\MakeUppercase{#1}\par}%
-}
-
-\newcommand{\MyVerbatim}[1]{%
-	\begin{multicols}{2}%
-	{\par\fontsize{7}{9}\selectfont\VerbatimInput[breaklines=true]{#1}\par}%
-	\end{multicols}%
-}
-
-\newcommand{\MyVerbatimLarge}[1]{%
-	\begin{multicols}{2}%
-	{\par\fontsize{5}{7}\selectfont\VerbatimInput[breaklines=true,obeytabs,tabsize=1]{#1}\par}%
-	\end{multicols}%
-}
-
-% \newcommand{\titleTwo}[1]{%
-% 	{\par\fontsize{14}{18}\selectfont\bfseries #1\par}%
-% }
-
- \newcommand{\titleTwo}[1]{%
-	{\fontsize{22}{26}\selectfont\bfseries{#1}\par}%
-}
-
-\newcommand{\titleTwoTZ}[1]{%
-	{\par\fontsize{14}{18}\selectfont\bfseries #1\par}%
-}
-
-\newcommand{\titleThree}[1]{%
-	{\par\normalsize\textbf{#1}\par}%
-}
-
-\newcommand{\image}[2]{
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.9\linewidth]{#1}
-		\caption{#2}
-		\label{fig:placeholder}
-	\end{figure}
-}
-
-\newcommand{\smallImage}[2]{
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.5\linewidth]{#1}
-		\caption{#2}
-		\label{fig:placeholder}
-	\end{figure}
-}
-
-\newcommand{\imageWithoutCaption}[1] {
-	\begin{figure}[H]
-		\centering
-		\includegraphics[width=0.5\linewidth]{#1}
-	\end{figure}
+\newcommand{\image}[3] {%
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{#1}
+        \caption{#2}
+        \label{#3}
+    \end{figure}
 }
