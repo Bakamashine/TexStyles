@@ -13,6 +13,7 @@
 \usepackage{multicol}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{enumitem}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -45,4 +46,8 @@
         \caption{#2}
         \label{#3}
     \end{figure}
+}
+
+\newcommand{\presect}[1] {%
+{\centering\bfseries #1 \par}
 }
